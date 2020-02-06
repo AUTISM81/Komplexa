@@ -1,21 +1,29 @@
 public class Komplex {
-    private double b;
-    private double a;
+    private  double real;
+    private double img;
 
-    public Komplex(double img, double rea) {
-        this.b = img;
-        this.a = rea;
+    public Komplex(double img, double real) {
+        this.real = real;
+        this.img = img;
     }
 
-    public double getB() {
-        return b;
+    public double getImg() {
+        return img;
     }
 
-    public double getA() {
-        return a;
+    public double getReal() {
+        return real;
     }
 
-    public void Addition() {
-        Komplex z = new Komplex(a, b);
+    public Komplex add(Komplex b) {
+        double real = this.getReal() + b.getReal();
+        double img = this.getImg() + b.getImg();
+
+        return new Komplex(img, real);
+    }
+
+    @Override
+    public String toString() {
+        return "Komplex = " + real + " + " + " " + img + 'i';
     }
 }
